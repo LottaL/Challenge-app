@@ -1,0 +1,123 @@
+DROP DATABASE IF EXISTS challengeapp;
+CREATE DATABASE challengeapp;
+USE challengeapp;
+
+CREATE TABLE users
+(
+  userID INT NOT NULL,
+  Fname VARCHAR(30) NOT NULL,
+  Lname VARCHAR(30) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  bday DATE NOT NULL,
+  nickname VARCHAR(30) NOT NULL,
+  password VARCHAR(30) NOT NULL,
+  st DATE NOT NULL,
+  et DATE,
+  PRIMARY KEY (userID),
+  UNIQUE (email),
+  UNIQUE (nickname)
+);
+
+CREATE TABLE challenge
+(
+  challengeID INT NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  description VARCHAR(300) NOT NULL,
+  creation_time DATE NOT NULL,
+  st DATE NOT NULL,
+  et DATE,
+  userID INT NOT NULL,
+  PRIMARY KEY (challengeID),
+  FOREIGN KEY (userID) REFERENCES users(userID),
+  UNIQUE (name)
+);
+
+CREATE TABLE medals
+(
+  medalID INT NOT NULL,
+  name VARCHAR(30) NOT NULL,
+  description VARCHAR(50) NOT NULL,
+  icon VARCHAR(100) NOT NULL,
+  PRIMARY KEY (medalID),
+  UNIQUE (name)
+);
+
+CREATE TABLE members
+(
+  membershipID INT NOT NULL,
+  stat VARCHAR(30) NOT NULL,
+  userID INT NOT NULL,
+  challengeID INT NOT NULL,
+  FOREIGN KEY (userID) REFERENCES users(userID),
+  FOREIGN KEY (challengeID) REFERENCES challenge(challengeID),
+  PRIMARY KEY (userID, challengeID)
+);
+
+CREATE TABLE admins
+(
+  title VARCHAR(30) NOT NULL,
+  challengeID INT NOT NULL,
+  userID INT NOT NULL,
+  FOREIGN KEY (challengeID) REFERENCES challenge(challengeID),
+  FOREIGN KEY (userID) REFERENCES users(userID)
+);
+
+CREATE TABLE achievements
+(
+  userID INT NOT NULL,
+  medalID INT NOT NULL,
+  PRIMARY KEY (userID, medalID),
+  FOREIGN KEY (userID) REFERENCES users(userID),
+  FOREIGN KEY (medalID) REFERENCES medals(medalID)
+);
+
+CREATE TABLE follow
+(
+  followID INT NOT NULL,
+  st DATE NOT NULL,
+  et DATE,
+  userID_target INT NOT NULL,
+  userID INT NOT NULL,
+  PRIMARY KEY (followID),
+  FOREIGN KEY (userID) REFERENCES users(userID),
+  FOREIGN KEY (userID) REFERENCES users(userID)
+);
+
+CREATE TABLE block
+(
+  blockID INT NOT NULL,
+  st DATE NOT NULL,
+  et DATE,
+  userID_target INT NOT NULL,
+  userID INT NOT NULL,
+  PRIMARY KEY (blockID),
+  FOREIGN KEY (userID) REFERENCES users(userID),
+  FOREIGN KEY (userID) REFERENCES users(userID)
+);
+
+CREATE TABLE images
+(
+  imageID INT NOT NULL,
+  timestamp DATE NOT NULL,
+  location VARCHAR(50),
+  alt VARCHAR(300),
+  metadata VARCHAR(300),
+  caption VARCHAR(300),
+  likes INT NOT NULL,
+  userID INT NOT NULL,
+  challengeID INT NOT NULL,
+  PRIMARY KEY (imageID),
+  FOREIGN KEY (userID) REFERENCES users(userID),
+  FOREIGN KEY (challengeID) REFERENCES challenge(challengeID)
+);
+
+CREATE TABLE comments
+(
+  commentID INT NOT NULL,
+  timestamp INT NOT NULL,
+  likes INT NOT NULL,
+  imageID INT NOT NULL,
+  userID INT NOT NULL,
+  FOREIGN KEY (imageID) REFERENCES images(imageID),
+  FOREIGN KEY (userID) REFERENCES users(userID)
+);
