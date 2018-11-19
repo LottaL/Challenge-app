@@ -98,6 +98,7 @@ CREATE TABLE block
 CREATE TABLE images
 (
   imageID INT NOT NULL,
+  file alt VARCHAR(300) NOT NULL,
   timestamp DATE NOT NULL,
   location VARCHAR(50),
   alt VARCHAR(300),
