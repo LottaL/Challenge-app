@@ -1,10 +1,7 @@
-DROP DATABASE IF EXISTS challengeapp;
-CREATE DATABASE challengeapp;
-USE challengeapp;
 
-CREATE TABLE users
+ CREATE TABLE users
 (
-  userID INT NOT NULL,
+  userID INT NOT NULL AUTO_INCREMENT,
   Fname VARCHAR(30) NOT NULL,
   Lname VARCHAR(30) NOT NULL,
   email VARCHAR(50) NOT NULL,
@@ -17,10 +14,9 @@ CREATE TABLE users
   UNIQUE (email),
   UNIQUE (nickname)
 );
-
-CREATE TABLE challenge
+ CREATE TABLE challenge
 (
-  challengeID INT NOT NULL,
+  challengeID INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
   description VARCHAR(300) NOT NULL,
   creation_time DATE NOT NULL,
@@ -31,20 +27,17 @@ CREATE TABLE challenge
   FOREIGN KEY (userID) REFERENCES users(userID),
   UNIQUE (name)
 );
-
-CREATE TABLE medals
+ CREATE TABLE medals
 (
-  medalID INT NOT NULL,
+  medalID INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
   description VARCHAR(50) NOT NULL,
   icon VARCHAR(100) NOT NULL,
   PRIMARY KEY (medalID),
   UNIQUE (name)
 );
-
-CREATE TABLE members
+ CREATE TABLE members
 (
-  membershipID INT NOT NULL,
   stat VARCHAR(30) NOT NULL,
   userID INT NOT NULL,
   challengeID INT NOT NULL,
@@ -52,8 +45,7 @@ CREATE TABLE members
   FOREIGN KEY (challengeID) REFERENCES challenge(challengeID),
   PRIMARY KEY (userID, challengeID)
 );
-
-CREATE TABLE admins
+ CREATE TABLE admins
 (
   title VARCHAR(30) NOT NULL,
   challengeID INT NOT NULL,
@@ -61,8 +53,7 @@ CREATE TABLE admins
   FOREIGN KEY (challengeID) REFERENCES challenge(challengeID),
   FOREIGN KEY (userID) REFERENCES users(userID)
 );
-
-CREATE TABLE achievements
+ CREATE TABLE achievements
 (
   userID INT NOT NULL,
   medalID INT NOT NULL,
@@ -70,10 +61,9 @@ CREATE TABLE achievements
   FOREIGN KEY (userID) REFERENCES users(userID),
   FOREIGN KEY (medalID) REFERENCES medals(medalID)
 );
-
-CREATE TABLE follow
+ CREATE TABLE follow
 (
-  followID INT NOT NULL,
+  followID INT NOT NULL AUTO_INCREMENT,
   st DATE NOT NULL,
   et DATE,
   userID_target INT NOT NULL,
@@ -82,10 +72,9 @@ CREATE TABLE follow
   FOREIGN KEY (userID) REFERENCES users(userID),
   FOREIGN KEY (userID) REFERENCES users(userID)
 );
-
-CREATE TABLE block
+ CREATE TABLE block
 (
-  blockID INT NOT NULL,
+  blockID INT NOT NULL AUTO_INCREMENT,
   st DATE NOT NULL,
   et DATE,
   userID_target INT NOT NULL,
@@ -94,10 +83,9 @@ CREATE TABLE block
   FOREIGN KEY (userID) REFERENCES users(userID),
   FOREIGN KEY (userID) REFERENCES users(userID)
 );
-
-CREATE TABLE images
+ CREATE TABLE images
 (
-  imageID INT NOT NULL,
+  imageID INT NOT NULL AUTO_INCREMENT,
   file VARCHAR(300),
   timestamp DATE NOT NULL,
   location VARCHAR(50),
@@ -111,14 +99,14 @@ CREATE TABLE images
   FOREIGN KEY (userID) REFERENCES users(userID),
   FOREIGN KEY (challengeID) REFERENCES challenge(challengeID)
 );
-
-CREATE TABLE comments
+ CREATE TABLE comments
 (
-  commentID INT NOT NULL,
+  commentID INT NOT NULL AUTO_INCREMENT,
   timestamp INT NOT NULL,
   likes INT NOT NULL,
   imageID INT NOT NULL,
   userID INT NOT NULL,
+  PRIMARY KEY (commentID),
   FOREIGN KEY (imageID) REFERENCES images(imageID),
   FOREIGN KEY (userID) REFERENCES users(userID)
 );
