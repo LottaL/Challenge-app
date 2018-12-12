@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profiili</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<!-- Navigointi-->
+<div class="container">
+    <header class="row">
+        <div class="col">
+            <h3>Nodember</h3>
+            <ul class="navigaatio">
+                <li class="nav-item">
+                    <a href="etusivu.html">Etusivu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="haasteet.html" class="dropbtn">Haasteet</a>
+                    <div class="dropdown-content">
+                        <a href="taidejoulu.html">Taidejoulukalenteri</a>
+                        <a href="vegaani.html">Vegaanihaaste</a>
+                        <a href="yhteydenotto.html">Ehdota uutta haastetta!</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a href="profiili.html">Profiili</a>
+                </li>
+                <li class="nav-item">
+                    <a href="yhteydenotto.html">Yhteydenotto</a>
+                </li>
+                <li><a href="javascript:void(0);" class="nav-item icon" onclick="myFunction()">
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Kirjautumisnavigaatio: piilota tämä luokka, kun käyttäjä on kirjautuneena sisään -->
+    <div class="visible">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="rekist.html" class="nav-link">Rekisteröidy</a>
+            </li>
+            <li class="register" id="kirj">
+                <a href="kirjaudu.html" class="nav-link">Kirjaudu sisään</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hidden">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="etusivu.html" class="nav-link">Kirjaudu ulos</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Kirjautumattomana -->
+
+    <div class="visible">
+        <h2>Profiili</h2>
+        <p>Voit tarkastella omaa tai muiden profiileja, kun olt <a href="kirjaudu.html">kirjautuneena</a> sisään,</p>
+    </div>
+
+
+
+    <!-- Kirjautuneena-->
+
+    <div class="visible">
+    <h2>Julkaisuni ja tietoja minusta</h2>
+    <hr>
+
+    <main class="row" id="profiili">
+        <div class="tietolistaus" id="profiilitiedot">
+            <h3 class="left">Tietoja minusta</h3>
+
+            <!-- Jos tähän laittaa jonkun kuvan, se pitäisi laittaa jonkun lomakkeen kautta -->
+            <img src="http://placekitten.com/222/165/">
+            <p class="left">Nimimerkki</p><p class="left" id="smalltext">Tiitu</p>
+            <p class="left">Ikä</p><p class="left" id="smalltext">23</p>
+            <p class="left">Minusta :</p><p class="left" id="smalltext">Olen kiinnostunut ...</p>
+            <br>
+            <p><button id="myBtn">Täydennä tietojasi</button></p>
+        </div>
+<!--
+        <!-- The Modal
+        <div id="myModal" class="modal">
+
+            <!-- Modal content
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <section class="form-container">
+                    <h3>Lisää julkaisu</h3>
+                    <form action="/upload" id="mediaform">
+                        <input type="text" name="otsikko" placeholder="Kuvan otsikko">
+                        <br>
+                        <input type="text" name="haaste" placeholder="#haasteen nimi">
+                        <br>
+                        <textarea class="addimage" name="details" placeholder="Kerro kuvastasi"></textarea>
+                        <br>
+                        <label class="button">Valitse kuva
+                            <input type="file" name="mediafile" accept="image/*">
+                        </label>
+                        <button type="submit">Lisää</button>
+                    </form>
+
+                </section>
+            </div>
+
+        </div>
+        -->
+
+        <main class="row">
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="http://placekitten.com/350/250/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">#vegaanihaaste</a></h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="button" data-toggle="modal" data-target="#Modal3">Katso julkaisu</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="http://placekitten.com/351/251/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="http://placekitten.com/353/250/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">#vegaanihaaste</a></h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <a href="#" class="button" data-toggle="modal" data-target="#Modal1">Katso julkaisu</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="http://placekitten.com/352/250/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="button" data-toggle="modal" data-target="#Modal3">Katso julkaisu</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="http://placekitten.com/350/249/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="http://placekitten.com/351/251/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">#vegaanihaaste</a></h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <a href="#" class="button" data-toggle="modal" data-target="#Modal1">Katso julkaisu</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    -->
+
+
+
+
+</div>
+
+<script src="public/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taidejoulukalenteri 2018</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<p id="sivu" style="visibility: hidden">joulu</p>
+<!-- Add your site or application content here -->
+
+<!-- Navigointi-->
+<div class="container">
+    <header class="row">
+        <div class="col">
+            <h3>Nodember</h3>
+            <ul class="navigaatio">
+                <li class="nav-item">
+                    <a href="etusivu.html">Etusivu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="haasteet.html" class="dropbtn">Haasteet</a>
+                    <div class="dropdown-content">
+                        <a href="taidejoulu.html">Taidejoulukalenteri</a>
+                        <a href="vegaani.html">Vegaanihaaste</a>
+                        <a href="yhteydenotto.html">Ehdota uutta haastetta!</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="profiili.html">Profiili</a>
+                </li>
+                <li class="nav-item">
+                    <a href="yhteydenotto.html">Yhteydenotto</a>
+                </li>
+                <li><a href="javascript:void(0);" class="nav-item icon" onclick="myFunction()">
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Kirjautumisnavigaatio: piilota tämä luokka, kun käyttäjä on kirjautuneena sisään -->
+    <div class="visible">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="rekist.html" class="nav-link">Rekisteröidy</a>
+            </li>
+            <li class="register" id="kirj">
+                <a href="kirjaudu.html" class="nav-link">Kirjaudu sisään</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hidden">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="etusivu.html" class="nav-link">Kirjaudu ulos</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Haasteiden koontisivu-->
+    <h2>Taidejoulukalenteri</h2>
+    <hr>
+    <main class="row" id="haasteet">
+
+        <div class="tietolistaus" id="haastelistaus">
+            <h3 class="left">Haasteet</h3>
+            <!-- Oikeasti Javascriptissä luodaan taulukko, johon haasteet listataan, ne järjestetään aakkosjärjestykseen ja lisätään tähän? Tähän projektiin voi tosin olla liian monimutkaista-->
+            <p class="left"><a href="#">Taidejoulukalenteri</a></p>
+            <p class="left"><a href="#">Vegaanihaaste</a></p>
+            <br>
+            <p class="left">Jos haluat ehdottaa uusia haasteita sivullemme, laita ehdotuksesi meille yhteydenotto-sivun lomakkeella.</p>
+
+        </div>
+
+        <div class=borders>
+            <div class="haastebannerit">
+                <div class="haaste">
+                    <img src="img/taidejoulu.jpg" style="width:100%" alt="First slide">
+                    <div class="kuvateksti">Taidetta joulua odotellessa?</div>
+                    <p>Tervetuloa taidejoulukalenterin sivuille! Mitä uusia taideteoksia tänään onkaan ilmestynyt sivuillemme?</p>
+                </div>
+                <br>
+            </div>
+        </div>
+    </main>
+    <br style="clear:both"/>
+    <hr>
+
+    <section  class="form-container" >
+        <h3>Lisää julkaisu</h3>
+        <form action="/upload" id="uploadimg" action="/upload" enctype="multipart/form-data" method="post">
+            <!--input type="text" name="otsikko" placeholder="Kuvan otsikko">
+            <br-->
+            <select name="challenge">
+                <option value="1">Taidejoulukalenteri</option>
+                <option value="2">Vegaanihaaste</option>
+            </select>
+            <br>
+            <textarea class="addimage" name="caption" placeholder="Kerro kuvastasi"></textarea>
+            <br>
+            <label class="button">Valitse kuva
+                <input type="file" name="file-to-upload" accept="image/*">
+            </label>
+            <button type="submit">Lisää</button>
+        </form>
+        <!-- Ylläoleva tuottaisi javascriptin avulla suunnilleen tällaisen html-tuotoksen
+        <div class="card">
+                <img class="card-img-top" src="mediafile" alt="otsikko">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#haaste</a></h5>
+                    <p class="card-text">"details"</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                </div>
+            </div>-->
+    </section>
+
+    <br><hr>
+    <main class="row">
+        <div class="card-group" id="julkaisut">
+            <!--div class="card">
+                <img class="card-img-top" src="http://placekitten.com/351/251/" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="http://placekitten.com/352/250/" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal3">Katso julkaisu</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="http://placekitten.com/350/249/" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-group" id="julkaisut">
+            <div class="card">
+                <img class="card-img-top" src="http://placekitten.com/351/251/" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="http://placekitten.com/352/250/" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal3">Katso julkaisu</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="http://placekitten.com/350/249/" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">#taidejoulukalenteri</a></h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="button" data-toggle="modal" data-target="#Modal2">Katso julkaisu</a>
+                </div>
+            </div-->
+        </div>
+    </main>
+</div>
+
+
+
+
+
+<!--
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+-->
+<script src="js/index.js"></script>
+<script src="js/julkaisu.js"></script>
+<script src="js/haku.js"></script>
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. HUOM!! Ylempänä cdnjs. ja stackpath-sivut kopioitu varmuuskopiosta
+<script>
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async="" defer=""></script>
+
+
+-->
+</body>
+</html>

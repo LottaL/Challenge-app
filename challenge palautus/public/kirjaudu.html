@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kirjaudu sisään</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="row">
+        <div class="col">
+            <h3>Nodember</h3>
+            <ul class="navigaatio">
+                <li class="nav-item">
+                    <a href="etusivu.html">Etusivu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="haasteet.html" class="dropbtn">Haasteet</a>
+                    <div class="dropdown-content">
+                        <a href="taidejoulu.html">Taidejoulukalenteri</a>
+                        <a href="vegaani.html">Vegaanihaaste</a>
+                        <a href="yhteydenotto.html">Ehdota uutta haastetta!</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="profiili.html">Profiili</a>
+                </li>
+                <li class="nav-item">
+                    <a href="yhteydenotto.html">Yhteydenotto</a>
+                </li>
+                <li><a href="javascript:void(0);" class="nav-item icon" onclick="myFunction()">
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Kirjautumisnavigaatio: piilota tämä luokka, kun käyttäjä on kirjautuneena sisään -->
+    <div class="visible">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="rekist.html" class="nav-link">Rekisteröidy</a>
+            </li>
+            <li class="register" id="kirj">
+                <a href="kirjaudu.html" class="nav-link">Kirjaudu sisään</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hidden">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="etusivu.html" class="nav-link">Kirjaudu ulos</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tähän input-osiot, joilla kirjaudutaan sisään -->
+
+    <div class="visible" id="kirjaudu">
+    <form>
+        <div class="logcontainer logform">
+            <h1>Kirjaudu sisään</h1>
+            <p>Jos sinulla on jo käyttäjätunnus, kirjaudu sisään tästä.</p>
+            <hr>
+
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="loginbtn">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <hr>
+            <div>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </div>
+        <div class="logcontainer regist">
+            <p>Vai halusitko sittenkin <a href="rekist.html">rekisteröityä</a>?</p>
+        </div>
+    </form>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<script src="public/js/index.js"></script>
+</body>
+</html>

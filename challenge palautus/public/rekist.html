@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rekisteröidy</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="row">
+        <div class="col">
+            <h3>Nodember</h3>
+            <ul class="navigaatio">
+                <li class="nav-item">
+                    <a href="etusivu.html">Etusivu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="haasteet.html" class="dropbtn">Haasteet</a>
+                    <div class="dropdown-content">
+                        <a href="taidejoulu.html">Taidejoulukalenteri</a>
+                        <a href="vegaani.html">Vegaanihaaste</a>
+                        <a href="yhteydenotto.html">Ehdota uutta haastetta!</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="profiili.html">Profiili</a>
+                </li>
+                <li class="nav-item">
+                    <a href="yhteydenotto.html">Yhteydenotto</a>
+                </li>
+                <li><a href="javascript:void(0);" class="nav-item icon" onclick="myFunction()">
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Kirjautumisnavigaatio: piilota tämä luokka, kun käyttäjä on kirjautuneena sisään -->
+    <div class="visible">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="rekist.html" class="nav-link">Rekisteröidy</a>
+            </li>
+            <li class="register" id="kirj">
+                <a href="kirjaudu.html" class="nav-link">Kirjaudu sisään</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hidden">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="etusivu.html" class="nav-link">Kirjaudu ulos</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tähän input-osiot, joihin käyttäjä voi syöttää omat tietonsa -->
+
+    <div id="rekist">
+    <form id="lomake" action="/register" enctype="multipart/form-data" method="post">
+        <div class="logcontainer logform">
+            <h1>Rekisteröidy</h1>
+            <p>Luodaksesi käyttäjätunnuksen, anna alla pyydetyt tiedot.</p>
+            <hr>
+
+            <label for="etunimi"><b>Etunimi</b></label>
+            <input type="text" placeholder="Enter firstname" name="etunimi" required>
+
+            <label for="sukunimi"><b>Sukunimi</b></label>
+            <input type="text" placeholder="Enter lastname" name="sukunimi" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="bday"><b>Syntymäaika</b></label>
+            <input type="text" placeholder="vvvv-kk-pp" name="bday" required>
+
+            <label for="nickname"><b>Nimimerkki</b></label>
+            <input type="text" placeholder="Anna nimimerkki" name="nickname" required>
+
+            <label for="password"><b>Salasana</b></label>
+            <input type="text" placeholder="Anna salasana" name="salasana" required>
+
+            <hr>
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <button type="submit" class="registerbtn">Register</button>
+        </div>
+
+        <div class="logcontainer signin">
+            <p>Oletko jo rekisteröitynyt? <a href="kirjaudu.html">Kirjaudu sisään</a>.</p>
+        </div>
+    </form>
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+<script src="js/rekist.js"></script>
+
+</body>
+</html>

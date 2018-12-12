@@ -1,0 +1,711 @@
+
+/* Koko sivua koskevat muokkaukset */
+
+* {
+    box-sizing:border-box;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/*eroaako bodysta? */
+.container {
+
+}
+
+h2, p {
+    text-align: center;
+}
+h1, h2, h3 {
+    color: #B2170E;
+}
+
+p, label {
+    color: #8C0700;
+}
+
+/* Tekstilinkkien väri */
+a {
+    color: #F5CA99;
+}
+
+/* Navigaation muokkaukset ********************************************************************************************/
+
+/* Navigaation ul-listaus, myös #navigaatio */
+.navigaatio {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FF8D87;
+}
+
+/* Navigaation li-jäsenten muokkaus */
+.nav-item {
+    float: left;
+}
+
+.nav-item a {
+    display: block;
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Taustavärin muutos, kun hiiri jäsenen päällä */
+.nav-item a:hover, .dropdown:hover .dropbtn {
+    background-color: #FFB2AE;
+}
+
+.active {
+    background-color: #FF6961;
+    font-weight: bold;
+}
+
+.active a:hover {
+    background-color: #FF6961;
+}
+
+.menu-icon {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0
+}
+
+/* Mobiiliversiossa käytettävä ikoni piilotetaan normaaliversiossa*/
+.icon {
+    display: none;
+}
+
+
+/* Haaste-nappulan pudotusvalikon muokkakset **************************************************************************/
+
+li.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Kirjautumisnavigaatiorivi ******************************************************************************************/
+
+
+/* Listan luokka */
+.loginto {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Listan jäsenten luokka */
+.register{
+    float: right;
+}
+
+.register a {
+    display: block;
+    color: rgb(20,20,20);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.register a:hover {
+    background-color: rgb(210,210,210);
+}
+
+
+/* Kun käyttäjä ei ole kirjautuneena, oletuksena näkyy kirjaudu sisään/rekisteröidy, sisäänkirjautuneena tilalle tulee "kirjaudu ulos" */
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* Etusivun tervetulotekstin muokkaukset - myös #etusivu *******************/
+
+.etusteksti h2 {
+
+}
+
+
+/* Karuselli **********************************************************************************************************/
+
+/* Karuselli */
+.slideshow-container {
+    max-width: 1600px;
+    position: relative;
+    margin: auto;
+}
+
+/* Kuvien piilotus */
+.carousel-item {
+    display: none;
+}
+
+.carousel-item img {
+    min-width: 300px;
+}
+
+/* Caption text */
+.iso-kuvateksti {
+    color: black;
+    font-size: 30px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* Etusivun julkaisut *************************************************************************************************/
+
+
+/* <hr>-elementti, jolla luokka fp*/
+.fp {
+    border: 2px solid #f1f1f1;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Julkaisujen sumennus kirjautumattomilta */
+
+.sumennettu { /* poista yksi m kun haluat testata sumennus-toimintoa */ /* ****************** */
+
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    height: 100%;
+}
+
+/* Sumennuksen päälle tuleva teksti, joka kertoo, että julkaisut näkyvät vain kirjautuneille*/
+/* Ajoittain pois käytöstä helpomman sivun muokkauksen vuoksi*/
+
+.bg-text {
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255, 0.7); /* Black w/opacity/see-through */
+    font-weight: bold;
+    border: 3px solid rgb(150,150,150);
+    position: absolute;
+    top: 1100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.bg-text p, .bg-text h1 {
+    color: rgb(90,90,90);
+}
+
+.bg-text a {
+    color: #FF6961;
+}
+
+/* Julkaisut, myös profiilissa ja haastesivuilla*/
+.card {
+    float: left;
+    height: 600px;
+    max-width: 450px;
+    padding: 5px 10px;
+    /* Julkaisujen "varjot" */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-align: center;
+    justify-content: space-around;
+    overflow: auto;
+    margin: 10px;
+}
+
+.card-body {
+    padding: 20px 16px 2px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.card-img-top {
+    border-radius: 5px 5px 0 0;
+}
+
+/*
+.card-group {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 50px;
+    grid-column-gap: 30px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+*/
+
+/* Flex-wrapilla kuvien määrä rivillä sivun leveyden mukaan */
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-around;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .card-group {
+        margin: 0px;
+    }
+    .bg-text {
+        width: 100%;
+    }
+}
+
+
+/* Haasteiden koontisivu **********************************************************************************************/
+
+/* Haasteet- ja profiilisivun sivupalkin muokkaukset*/
+.tietolistaus {
+    width: 250px;
+    max-height: 1200px;
+    border: solid #f1f1f1;
+    padding: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+
+#haasteet {
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    margin-inside: 20px;
+}
+
+.left {
+    text-align: left;
+}
+
+.borders {
+    padding: 50px;
+    border: solid #f1f1f1;
+    border-radius: 10px;
+}
+
+.kuvateksti {
+    color: rgb(20,20,20);
+    font-size: 30px;
+    padding: 8px 12px;
+    position: inherit;
+    width: 100%;
+    text-align: center;
+}
+
+.haaste {
+    border: solid #f9f9f9;
+    padding: 10px;
+}
+
+/* Haasteeseen voisi ehkä laittaa eri kuvan mobiiliin? Aika pieni tulee muuten
+
+.haaste img {
+
+}
+*/
+
+/* Profiili ***********************************************************************************************************/
+
+
+#profiili {
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    margin-inside: 20px;
+}
+
+/* Profiilin tietotekstit */
+
+#smalltext {
+    font-size: 13px;
+    padding-left: 5px;
+}
+
+
+/* Media-asetuksia haasteet- ja profiilisivuille **********************************************************************/
+
+@media screen and (max-width: 800px) {
+    .borders {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tietolistaus {
+        width: 100%;
+        height: 100%;
+        margin: 0 0 10px 0;
+    }
+    .tietolistaus img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+    .left {
+        text-align: center;
+    }
+    .borders {
+        padding: 10px;
+    }
+    #haasteet, #profiili {
+        display: block;
+    }
+    .card-img-top {
+        width: 100%;
+        max-width: 450px;
+    }
+    .card {
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    .iso-kuvateksti, .kuvateksti {
+        font-size: 20px;
+    }
+    .logcontainer h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+
+
+
+/* Lomakkeiden muokkaukset yleisesti **********************************************************************************/
+
+/* Style inputs */
+input[type=text], textarea, input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    resize: vertical;
+}
+
+input[type=text], input[type=password] {
+    background-color: #f1f1f1;
+}
+
+/* Yhteydenottosivun input-tekstien taustaväri, kumoaa edeltävän taustavärin*/
+input[class=white] {
+    background: white;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: #FFD6D4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #FF8D87;
+}
+
+
+/* Yhdeydenottosivun muokkaukset **************************************************************************************/
+
+/*  */
+.contcontainer {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    max-width: 1600px;
+}
+
+
+/* Kaksiosainen lomake */
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.conimg {
+    max-width: 500px;
+}
+
+#subject {
+    max-height: 500px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Media-asetukset pienille ruuduille */
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+
+}
+
+
+/* kirjautumissivun muokkaukset ***************************************************************************************/
+
+form {
+    border: 3px solid #f1f1f1;
+    display: flex;
+}
+
+.logcontainer {
+    padding: 16px;
+    background-color: white;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Unohditko salasanan? */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Kirjautumis/rekisteröitymis-napin muokkaukset */
+.registerbtn, .loginbtn {
+    background-color: #FFD6D4;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover, .loginbtn:hover {
+    opacity: 1;
+    background-color: #FF8D87;
+
+}
+
+/* Linkki rekisteröitymiseen, tausta */
+.regist, .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+    max-width: 700px;
+    width: 50%;
+}
+
+.logform {
+    max-width: 900px;
+    width: 50%;
+}
+
+
+@media screen and (max-width: 600px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    form {
+        display: block;
+    }
+
+    .logform, .regist, .signin {
+        width: 100%;
+        margin-top: 0;
+    }
+
+}
+
+
+/* Haasteen sivu *******************************************************************************************************/
+
+#julkaisubanneri {
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    margin-inside: 20px;
+}
+
+.addimage {
+    max-height: 100px;
+    min-height: 40px;
+}
+
+input[type=file] {
+
+}
+
+button[type=submit] {
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+/*************************************************************
+             Navigaation responsiivinen muokkaus
+ **************************************************************/
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+
+
+@media screen and (max-width: 600px) {
+    .nav-item a {
+        width: 100%;
+        font-size: 15px;
+    }
+
+
+}
+@media screen and (max-width: 400px) {
+    .nav-item a {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+/*@media screen and (max-width: 600px) {
+    .nav-item.responsive {position: relative;}
+    .a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav-item.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}*/
+
+
+/* Kuvansyöttö-lomakkeen muokkaukset **********************************************************************************/
+
+
+.form-container h3 {
+    text-align: center;
+}
+
+.form-container {
+    width: 900px;
+    min-width: auto;
+    box-sizing: border-box;
+
+}
+/*
+.form-container input, .form-container textarea {
+    width: 40%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+*/
+.form-container label {
+    width: 60%;
+}
+
+.button {
+    padding-left: 2px;
+}
+
+.addimage {
+    border: solid 0.5px rgb(220,220,220);
+}
+
+@media screen and (max-width: 950px) {
+    .form-container {
+        width: 600px;
+        box-sizing: border-box;
+        padding: 0 2rem;
+    }
+    .form-container input, .form-container textarea {
+        width: 20%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 2rem;
+    }
+    .form-container input, .form-container textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

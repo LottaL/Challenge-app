@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Multer Upload Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<form id="uploadimg" action="/upload" enctype="multipart/form-data" method="post">
+    <label for="user"><b>Nimimerkki</b></label>
+    <input type="text" placeholder="Käyttäjä" name="user" required>
+
+    <label for="challenge"><b>Haaste</b></label>
+    <input type="text" placeholder="Haaste" name="challenge" required>
+
+    <label for="caption"><b>Kuvaus</b></label>
+    <input type="text" placeholder="Mitä mietit?" name="caption" required>
+
+    <label for="alt"><b>Alt</b></label>
+    <input type="text" placeholder="Kuvaile mitä kuvassa näkyy" name="alt">
+
+    <label for="location"><b>Paikka</b></label>
+    <input type="text" placeholder="Missä kuva on otettu?" name="location" required>
+
+    <input type="file" name="file-to-upload" accept="image/*">
+    <button type="submit">upload</button>
+</form>
+
+<form id="searchbar" action="/search" enctype="multipart/form-data" method="post">
+    <label for="search"><b>Haku</b></label>
+    <input type="text" placeholder="Hae" name="search">
+
+    <button type="submit">search</button>
+</form>
+
+<script src="public/js/index.js"></script>
+<script src="public/js/julkaisu.js"></script>
+
+</body>
+</html>

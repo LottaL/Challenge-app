@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haasteet</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<!-- Navigointi-->
+<div class="container">
+    <header class="row">
+        <div class="col">
+            <h3>Nodember</h3>
+            <ul class="navigaatio">
+                <li class="nav-item">
+                    <a href="etusivu.html">Etusivu</a>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a href="haasteet.html" class="dropbtn">Haasteet</a>
+                    <div class="dropdown-content">
+                        <a href="taidejoulu.html">Taidejoulukalenteri</a>
+                        <a href="vegaani.html">Vegaanihaaste</a>
+                        <a href="yhteydenotto.html">Ehdota uutta haastetta!</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="profiili.html">Profiili</a>
+                </li>
+                <li class="nav-item">
+                    <a href="yhteydenotto.html">Yhteydenotto</a>
+                </li>
+                <li><a href="javascript:void(0);" class="nav-item icon" onclick="myFunction()">
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                    <div class="menu-icon"></div>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Kirjautumisnavigaatio: piilota tämä luokka, kun käyttäjä on kirjautuneena sisään -->
+    <div class="visible">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="rekist.html" class="nav-link">Rekisteröidy</a>
+            </li>
+            <li class="register" id="kirj">
+                <a href="kirjaudu.html" class="nav-link">Kirjaudu sisään</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hidden">
+        <ul class="loginto">
+            <li class="register" id="rek">
+                <a href="etusivu.html" class="nav-link">Kirjaudu ulos</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Haasteiden koontisivu-->
+    <h2>Tällä hetkellä käynnissä olevia haasteita</h2>
+    <hr>
+    <main class="row" id="haasteet">
+
+        <div class="tietolistaus" id="haastelistaus">
+                <h3 class="left">Haasteet</h3>
+                <!-- Oikeasti Javascriptissä luodaan taulukko, johon haasteet listataan, ne järjestetään aakkosjärjestykseen ja lisätään tähän? Tähän projektiin voi tosin olla liian monimutkaista-->
+                <p class="left"><a href="#">Taidejoulukalenteri</a></p>
+                <p class="left"><a href="#">Vegaanihaaste</a></p>
+                <br>
+                <p class="left">Jos haluat ehdottaa uusia haasteita sivullemme, laita ehdotuksesi meille yhteydenotto-sivun lomakkeella.</p>
+
+        </div>
+
+        <div class=borders>
+            <div class="haastebannerit">
+                <div class="haaste">
+                    <img src="http://placekitten.com/1000/302" style="width:100%" alt="First slide">
+                    <div class="kuvateksti">Joulutaidekissa</div>
+                    <p><a href="#">#taidejoulukalenteri</a> on lumoava haaste, jossa pääsee näyttämään taiteelliset kykynsä. Katso, ihastu ja osallistu!</p>
+                </div>
+                <br>
+                <div class="haaste">
+                    <img src="http://placekitten.com/1000/301" style="width:100%" alt="Second slide">
+                    <div class="kuvateksti">Vegaanikissa</div>
+                    <p><a href="#">#vegaanihaaste</a>ssa voit haastaa itsesi ja ystäväsi paremman huomisen puolesta. Tutustu, nauti ja ylläty!</p>
+                </div>
+                <br>
+                <div class="haaste">
+                    <img src="http://placekitten.com/1000/299" style="width:100%" alt="Third slide">
+                    <div class="kuvateksti">Ehdota haastetta</div>
+                    <p>Haluatko haastaa muut ihmisen uuteen haasteeseen, jota ei vielä löydy sivultamme? <a href="yhteydenotto.html">Ehdota</a> uutta haastetta, niin toiveesi saattaa pian toteutua!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+
+
+<!--
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+-->
+<script src="public/js/index.js"></script>
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. HUOM!! Ylempänä cdnjs. ja stackpath-sivut kopioitu varmuuskopiosta
+<script>
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async="" defer=""></script>
+
+
+-->
+</body>
+</html>
