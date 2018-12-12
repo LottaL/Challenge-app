@@ -1,4 +1,3 @@
-
  CREATE TABLE users
 (
   userID INT NOT NULL AUTO_INCREMENT,
@@ -8,6 +7,8 @@
   bday DATE NOT NULL,
   nickname VARCHAR(30) NOT NULL,
   password VARCHAR(30) NOT NULL,
+  profilepic VARCHAR(300),
+  profilethumb VARCHAR(300),
   st DATE NOT NULL,
   et DATE,
   PRIMARY KEY (userID),
@@ -18,6 +19,7 @@
 (
   challengeID INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
+  banner VARCHAR(50),
   description VARCHAR(300) NOT NULL,
   creation_time DATE NOT NULL,
   st DATE NOT NULL,
@@ -87,6 +89,7 @@
 (
   imageID INT NOT NULL AUTO_INCREMENT,
   file VARCHAR(300),
+  thumb VARCHAR(300),
   timestamp DATE NOT NULL,
   location VARCHAR(50),
   alt VARCHAR(300),
